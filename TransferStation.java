@@ -4,7 +4,7 @@ public class TransferStation extends Station {
     private ArrayList<Station> transferStationsPrev;
     private ArrayList<Station> transferStationsNext;
 
-    public TransferStation(String lineColor, String stationName) {
+    public TransferStation(String lineColor, String stationName) { 
         super(lineColor, stationName);
         this.transferStationsPrev = new ArrayList<>();
         this.transferStationsNext = new ArrayList<>();
