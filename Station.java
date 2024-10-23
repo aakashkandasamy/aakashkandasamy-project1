@@ -63,42 +63,39 @@ public class Station {
         return lineColor.equals(station.lineColor) && stationName.equals(station.stationName);
     }
 
-    // Updated tripLength method with debug statements
+
     public int tripLength(Station dest) {
-        System.out.println("Starting trip from " + this.getStationName() + " to " + dest.getStationName());
-        return tripLength(dest, new HashSet<>(), false);
+        return tripLength(dest, new HashSet<>());  
     }
 
-    private int tripLength(Station dest, Set<Station> visited, boolean transferred) {
+    
+    private int tripLength(Station dest, Set<Station> visited) {
         if (this.equals(dest)) {
-            System.out.println("Reached destination: " + dest.getStationName());
             return 0;
         }
 
-        if (visited.contains(this)) {
-            return -1;  // Avoid infinite loops
-        }
-        visited.add(this);
 
-        // Debug: Show current station being visited
-        System.out.println("Visiting station: " + this.getStationName() + " on " + this.getLineColor() + " line");
+        if (visited.contains(this)) {
+            return -1;
+        }
+        visited.add(this); 
+
 
         if (this instanceof TransferStation) {
             TransferStation transferStation = (TransferStation) this;
             for (Station transfer : transferStation.otherStations) {
-                System.out.println("Attempting transfer at " + this.getStationName() + " to " + transfer.getLineColor() + " line");
-                int length = transfer.tripLength(dest, visited, true);
+                int length = transfer.tripLength(dest, visited);
                 if (length >= 0) {
-                    System.out.println("Transfer successful at " + this.getStationName());
                     return 1 + length;
                 }
             }
         }
 
+
         if (this.next != null && this.next != this) {
-            return 1 + this.next.tripLength(dest, visited, transferred);
+            return 1 + this.next.tripLength(dest, visited);
         }
 
-        return -1;  // Path not found
+        return -1;  
     }
 }

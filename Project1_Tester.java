@@ -309,8 +309,8 @@ public class Project1_Tester {
     assertEquals(4, s1.tripLength(s4));
     assertEquals(4, s1.tripLength(b3));
     assertEquals(4, s1.tripLength(b4));
-//  assertEquals(5, s1.tripLength(b5));
-//  assertEquals(5, b1.tripLength(b5));
+    assertEquals(5, s1.tripLength(b5));
+    assertEquals(5, b1.tripLength(b5));
   }
 
 
@@ -326,7 +326,7 @@ public class Project1_Tester {
     assertEquals(9, MetroSimulator.va_square.tripLength(MetroSimulator.smithsonian));
     assertEquals(9, MetroSimulator.va_square.tripLength(MetroSimulator.judiciary_square));
     assertEquals(4, MetroSimulator.foggy_bottom.tripLength(MetroSimulator.s4));
-//  assertEquals(3, MetroSimulator.s2.tripLength(MetroSimulator.gallery_place));
+    assertEquals(3, MetroSimulator.s2.tripLength(MetroSimulator.gallery_place));
   }
 
 }
