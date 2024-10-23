@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Station {
     public Station prev;
     public Station next;
@@ -62,11 +65,37 @@ public class Station {
 
 
     public int tripLength(Station dest) {
+        return tripLength(dest, new HashSet<>());  
+    }
+
+    
+    private int tripLength(Station dest, Set<Station> visited) {
         if (this.equals(dest)) {
             return 0;
-        } else if (this.next != null && this.next != this) { 
-            return 1 + this.next.tripLength(dest);
         }
-        return -1; 
+
+
+        if (visited.contains(this)) {
+            return -1;
+        }
+        visited.add(this); 
+
+
+        if (this instanceof TransferStation) {
+            TransferStation transferStation = (TransferStation) this;
+            for (Station transfer : transferStation.otherStations) {
+                int length = transfer.tripLength(dest, visited);
+                if (length >= 0) {
+                    return 1 + length;
+                }
+            }
+        }
+
+
+        if (this.next != null && this.next != this) {
+            return 1 + this.next.tripLength(dest, visited);
+        }
+
+        return -1;  
     }
 }

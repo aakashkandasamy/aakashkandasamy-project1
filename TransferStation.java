@@ -17,18 +17,16 @@ public class TransferStation extends Station {
         this.otherStations.add(station);
         station.prev = this;
     }
+
     @Override
     public String toString() {
         StringBuilder transferInfo = new StringBuilder();
         transferInfo.append("Transfers: \n");
-
         for (Station station : otherStations) {
             transferInfo.append("\t").append(station.toString()).append("\n");
         }
-
         String prevStationName = (prev != null) ? prev.getStationName() : "none";
         String nextStationName = (next != null) ? next.getStationName() : "none";
-
         return String.format("TRANSFERSTATION %s: %s line, in service: %b, previous station: %s, next station: %s\n\t%s",
                               this.getStationName(), this.getLineColor(), this.isAvailable(),
                               prevStationName, nextStationName, transferInfo.toString());
