@@ -1,3 +1,15 @@
+commit 0b15e6a3aabb5dd90403a47d8b7769d34795c1d8
+Author: aakashkandasamy <aakashkandasamy@gmail.com>
+Date:   Wed Oct 23 00:23:00 2024 -0400
+
+    Debugging test cases 12 and 13
+
+commit 12aa8e366c1a4565d34a6c6dd28daeeb14ed8a5b
+Author: aakashkandasamy <aakashkandasamy@gmail.com>
+Date:   Wed Oct 23 00:06:04 2024 -0400
+
+    Update log_file.txt
+
 commit f967c3aa1b44193df51f6ccdb3f5f411e0fd2f83
 Author: aakashkandasamy <aakashkandasamy@gmail.com>
 Date:   Wed Oct 23 00:01:19 2024 -0400
@@ -24,12 +36,12 @@ Date:   Mon Oct 21 19:54:16 2024 -0400
 
 commit 0a4421ff10bda0aa350dca70258867980b1b9e17
 Author: aakashkandasamy <aakashkandasamy@gmail.com>
-Date:   Mon Oct 21 19:34:35 2024 -0400
+Date:   Wed Oct 16 15:54:35 2024 -0400
 
     init
 
 commit 904d8b632758d1c1927b7f3b3e86b476fe132b7f
 Author: aakashkandasamy <67540149+aakashkandasamy@users.noreply.github.com>
-Date:   Tue Oct 22 03:21:21 2024 +0400
+Date:   Wed Oct 16 03:21:21 2024 +0400
 
     Add files via upload
