@@ -12,6 +12,7 @@ public class Station {
         this.prev = null;
         this.next = null;
     }
+
     public void addNext(Station station) {
         this.next = station;
         station.prev = this;
@@ -59,12 +60,13 @@ public class Station {
         return lineColor.equals(station.lineColor) && stationName.equals(station.stationName);
     }
 
+
     public int tripLength(Station dest) {
         if (this.equals(dest)) {
             return 0;
-        } else if (this.next != null) {
+        } else if (this.next != null && this.next != this) { 
             return 1 + this.next.tripLength(dest);
         }
-        return -1;
+        return -1; 
     }
 }

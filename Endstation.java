@@ -5,11 +5,15 @@ public class EndStation extends Station {
     }
 
     public void makeEnd() {
-        if (this.prev == null) {
-            this.prev = this; 
-        }
-        if (this.next == null) {
-            this.next = this; 
+        if (this.prev != null && this.next == null) {
+            this.next = this.prev;
+        } else if (this.next != null && this.prev == null) {
+            this.prev = this.next;
+        } else if (this.prev == null && this.next == null) {
+            this.prev = this;
+            this.next = this;
+        } else if (this.prev != null && this.next != null) {
+            this.prev = this.next;  
         }
     }
 
